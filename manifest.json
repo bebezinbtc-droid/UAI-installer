@@ -6,11 +6,21 @@
     {
       "chipFamily": "ESP32",
       "parts": [
-        { "path": "firmware/bootloader.bin", "offset": 4096 },
-        { "path": "firmware/partition-table.bin", "offset": 32768 },
-        { "path": "firmware/ota_data_initial.bin", "offset": 57344 },
-        { "path": "firmware/firmware.bin", "offset": 131072 },
-        { "path": "firmware/storage.bin", "offset": 3014656 }
+        { "path": "firmware/esp32/bootloader.bin", "offset": 4096 },
+        { "path": "firmware/esp32/partition-table.bin", "offset": 32768 },
+        { "path": "firmware/esp32/ota_data_initial.bin", "offset": 57344 },
+        { "path": "firmware/esp32/firmware.bin", "offset": 131072 },
+        { "path": "firmware/esp32/storage.bin", "offset": 3014656 }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "firmware/esp32s3/bootloader.bin", "offset": 0 },
+        { "path": "firmware/esp32s3/partition-table.bin", "offset": 32768 },
+        { "path": "firmware/esp32s3/ota_data_initial.bin", "offset": 57344 },
+        { "path": "firmware/esp32s3/firmware.bin", "offset": 131072 },
+        { "path": "firmware/esp32s3/storage.bin", "offset": 3014656 }
       ]
     }
   ]
