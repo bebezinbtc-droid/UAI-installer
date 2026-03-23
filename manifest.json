@@ -1,6 +1,6 @@
 {
   "name": "AIO Tester",
-  "version": "1.9.0",
+  "version": "1.10.1",
   "new_install_prompt_erase": true,
   "builds": [
     {
