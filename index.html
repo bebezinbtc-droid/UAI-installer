@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAI — AIO Tester Installer</title>
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0a0e;
+            color: #e8e4de;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: #ff5e00;
+        }
+
+        .logo-bracket {
+            color: #666;
+        }
+
+        h1 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        .card {
+            background: #141418;
+            border: 1px solid #2a2a30;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            text-align: left;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ff5e00;
+            color: #ff5e00;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .step-text {
+            font-size: 0.82rem;
+            line-height: 1.5;
+            color: #ccc;
+            padding-top: 2px;
+        }
+
+        .install-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        esp-web-install-button {
+            --esp-tools-button-color: #ff5e00;
+            --esp-tools-button-text-color: #0a0a0e;
+        }
+
+        esp-web-install-button button {
+            background: #ff5e00;
+            color: #0a0a0e;
+            border: none;
+            padding: 0.85rem 2rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            font-family: inherit;
+            transition: opacity 0.15s;
+        }
+
+        esp-web-install-button button:hover {
+            opacity: 0.85;
+        }
+
+        .warning {
+            font-size: 0.7rem;
+            color: #ff5e00;
+            line-height: 1.6;
+            font-style: italic;
+            border: 1px solid rgba(255, 94, 0, 0.3);
+            padding: 0.75rem;
+        }
+
+        .browser-warning {
+            display: none;
+            font-size: 0.78rem;
+            color: #ff3b30;
+            padding: 1rem;
+            border: 1px solid rgba(255, 59, 48, 0.3);
+            background: rgba(255, 59, 48, 0.05);
+        }
+
+        .footer {
+            font-size: 0.62rem;
+            color: #555;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div class="logo"><span class="logo-bracket">[</span>UAI<span class="logo-bracket">]</span></div>
+            <h1>AIO Tester — Instalador</h1>
+        </div>
+
+        <div class="card">
+            <div class="step">
+                <span class="step-num">1</span>
+                <span class="step-text">Conecte o ESP32 ao computador via cabo USB</span>
+            </div>
+            <div class="step">
+                <span class="step-num">2</span>
+                <span class="step-text">Clique no botão abaixo e selecione a porta serial do ESP32</span>
+            </div>
+            <div class="step">
+                <span class="step-num">3</span>
+                <span class="step-text">Aguarde a instalação completar. O ESP32 vai reiniciar automaticamente.</span>
+            </div>
+
+            <div class="install-container">
+                <esp-web-install-button manifest="manifest.json">
+                    <button slot="activate">INSTALAR FIRMWARE</button>
+                    <span slot="unsupported">
+                        <div class="browser-warning" style="display:block">
+                            Seu navegador não suporta Web Serial.<br>
+                            Use o Google Chrome ou Microsoft Edge.
+                        </div>
+                    </span>
+                    <span slot="not-allowed">
+                        <div class="browser-warning" style="display:block">
+                            Acesso à porta serial negado.<br>
+                            Permita o acesso quando solicitado.
+                        </div>
+                    </span>
+                </esp-web-install-button>
+            </div>
+        </div>
+
+        <div class="warning">
+            Não desconecte o ESP32 durante a instalação. Use apenas Google Chrome ou Microsoft Edge.
+        </div>
+
+        <div class="footer">
+            AIO Tester &copy; 2026
+        </div>
+    </div>
+</body>
+</html>

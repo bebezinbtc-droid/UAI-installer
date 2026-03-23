@@ -1,0 +1,17 @@
+{
+  "name": "AIO Tester",
+  "version": "1.9.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "firmware/bootloader.bin", "offset": 4096 },
+        { "path": "firmware/partition-table.bin", "offset": 32768 },
+        { "path": "firmware/ota_data_initial.bin", "offset": 57344 },
+        { "path": "firmware/firmware.bin", "offset": 131072 },
+        { "path": "firmware/storage.bin", "offset": 3014656 }
+      ]
+    }
+  ]
+}
