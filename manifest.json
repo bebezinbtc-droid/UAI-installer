@@ -1,6 +1,6 @@
 {
-  "name": "AIO Tester",
-  "version": "1.13.2",
+  "name": "Anvil",
+  "version": "1.14.16",
   "new_install_prompt_erase": true,
   "builds": [
     {
